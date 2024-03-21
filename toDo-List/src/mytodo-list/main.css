@@ -1,0 +1,49 @@
+body{
+    background-color: rgb(226, 241, 246);
+}
+md-card{
+    width: 800px  !important;
+    margin: 20px 400px  !important;
+}
+
+md-card-title{
+    justify-content: center  !important;
+}
+
+.AddContainer{
+    margin: 0px 100px  !important;
+}
+
+.inputFiled{
+    width: 350px   !important;
+    margin-bottom: 20px  !important;
+}
+.addbtn{
+    margin-left: 50px !important;
+}
+.listIitem {
+    padding: 0px 25px !important; 
+    align-items: center !important; 
+    justify-content: space-between !important;
+}
+.action-btn{
+    margin-right: 150px !important;
+}
+.list-btn{
+    padding-bottom: 5px  !important;
+     padding-left: 0px  !important;
+}
+.md-error-toast-theme{
+    color: #fff !important;
+}
+.md-error-toast-theme .md-toast-content{
+    background-color: #FF5252 !important; 
+}
+
+.md-success-toast-theme .md-toast-content {
+    background-color: #4CAF50 !important; 
+}
+
+.md-info-toast-theme .md-toast-content{
+    background-color: #2196F3 !important;
+}

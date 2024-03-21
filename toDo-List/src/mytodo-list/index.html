@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My AngularJS App</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet"
+        href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+
+    <!-- Your application bootstrap  -->
+    <script src="../module/myApp.js"></script>
+    <script src="../controller/myCtrl.js"></script>
+</head>
+
+<body>
+    <div ng-app="myList" ng-controller="myCtrl as ctrl">
+        <md-toolbar class="md-hue-2">
+            <div class="md-toolbar-tools">
+                <h2> <span>Toolbar For TO Do List</span>
+                </h2>
+            </div>
+        </md-toolbar>
+
+        <md-card>
+            <md-card-title>
+                <header class="heading">
+                    <h3 class="md-display-1">My Shopping List</h3>
+                    <md-divider></md-divider>
+                </header>
+            </md-card-title>
+
+            <md-card-title-text>
+                <div class="AddContainer" layout="flex">
+                    <md-input-container>
+                        <label>Add List</label>
+                        <input type="text" ng-model="addMe" class="inputFiled">
+                        <br><b><i>Add Time:</i></b> <input type="datetime-local">
+                    </md-input-container>
+                    <div class="add-btn">
+                        <md-button class="md-raised md-primary addbtn" ng-click="addItem()">Add</md-button>
+                    </div>
+                </div>
+                <div class="list">
+                    <md-list class="list-ul">
+
+                        <li layout="flex" ng-repeat="x in listItems" class="listIitem">
+                            <b><i>{{x.text}}</i></b>
+                            <div class="action-btn">
+                                <md-button class="md-raised md-primary list-btn" ng-click="ctrl.edit(x)">
+                                    <md-icon>Edit</md-icon>
+                                </md-button>
+                                <md-button class="md-raised md-warn" ng-click="removeItem($index)">
+                                    <md-icon md-svg-src="../asserts/delete.svg"></md-icon>
+                                </md-button>
+                            </div>
+                        </li>
+                    </md-list>
+                </div>
+                
+                <div class="total-list" layout="flex"
+                    style="margin: 5px 20px; justify-content: center; align-items: center;">
+                    <md-body-1>You have {{listItems.length}} pending task.</md-body-1>
+                    <md-button class="md-raised md-accent list-btn" ng-click="removeAll()">Remove All</md-button>
+                </div>
+            </md-card-title-text>
+        </md-card>
+
+    </div>
+</body>
+
+</html>
